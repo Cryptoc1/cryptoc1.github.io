@@ -1,0 +1,357 @@
+html,
+body {
+    height: 100%;
+    background: linear-gradient(#03A9F4, #81D4FA);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13pt;
+    font-weight: 400;
+    color: #616161;
+    margin: 0;
+    padding: 0;
+    font-smooth: antialiased;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+}
+
+body {
+    padding-bottom: 100%;
+}
+
+html::selection,
+body::selection,
+::selection {
+    background: rgba(79, 195, 247, .45);
+}
+
+t {
+    text-indent: 20px;
+    margin-right: 20px;
+}
+
+.header {
+    height: 80%;
+    font-size: 26pt;
+    font-weight: 600;
+    color: #EEEEEE;
+    text-align: center;
+}
+
+#name {
+    padding-top: 10px;
+}
+
+.card {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    border-radius: 3px;
+    /*    box-shadow: 0px 2px 8px 2px #BDBDBD;*/
+    
+    padding: 14px;
+}
+
+.card-title {
+    width: 100%;
+    font-size: 18pt;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2pt;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+}
+
+.thing-icon-left {
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+.thing-icon-right {
+    width: 25%;
+    display: inline-block;
+    float: right;
+}
+
+.thing-title {
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+.thing-descr {
+    display: inline-block;
+    width: 65%;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#computer {
+    margin-top: 15%;
+}
+
+#computer:hover #mini-site {
+    opacity: .75;
+}
+
+#computer:hover #computer-screen {
+    background-color: #616161;
+}
+
+.computer-part {
+    width: 200px;
+    background-color: #BDBDBD;
+}
+
+#computer-lid {
+    height: 125px;
+    border-radius: 4px;
+    padding-top: 8px;
+    margin: 0 auto;
+}
+/*#computer-screen {
+    width: 178px;
+    height: 108px;
+    margin: 0 auto;
+    background-color: #424242;
+    border-radius: 3px;
+    padding: 6px;
+    transition: .75s;
+}
+#code-on-screen {
+    font-family: monospace;
+    font-size: 6pt;
+    color: #F5F5F5;
+    overflow: hidden;
+    transition: .75s;
+    opacity: 0;
+}
+*/
+
+#computer-screen {
+    width: 190px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: #424242;
+    border-radius: 3px;
+    transition: .75s;
+    overflow: hidden;
+}
+
+#mini-site {
+    height: 150%;
+    font-size: 6pt;
+    color: #F5F5F5;
+    overflow: hidden;
+    transition: .75s;
+    opacity: 0;
+    background: linear-gradient(#03A9F4, #81D4FA);
+}
+
+#mini-site #-header {
+    text-align: center;
+    height: 48%;
+}
+
+#mini-site #-card {
+    text-align: center;
+    color: #616161;
+    font-size: 4pt;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+}
+
+#computer-body {
+    height: 11px;
+    border-top-style: solid;
+    border-top-width: thin;
+    border-top-color: #9E9E9E;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0px 12px 22px 1px #BDBDBD;
+}
+
+#body-lip {
+    background-color: #9E9E9E;
+    opacity: .95;
+    width: 50px;
+    height: 6px;
+    margin: 0 auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#lightbulb {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#lightbulb:hover .bulb {
+    opacity: .75;
+}
+
+#lightbulb:hover #bulb {
+    box-shadow: 0px 0px 20px 10px #FFD740;
+}
+
+.bulb {
+    background-color: #FFEE58;
+    opacity: .45;
+    transition: .75s;
+}
+
+#bulb {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 35%;
+    margin: 0 auto;
+    /*    box-shadow: 0px 0px 20px 10px #FFD740;*/
+}
+
+#stem {
+    width: 60px;
+    height: 12px;
+    margin: 0 auto;
+    margin-top: -1px;
+}
+
+#screw {
+    width: 60px;
+    height: 50px;
+    background-color: #9E9E9E;
+    margin: 0 auto;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+#screw div {
+    width: 60px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: #757575;
+    margin-bottom: 5px;
+    transform: rotateZ(8deg);
+}
+
+#screw div#first {
+    width: 60px;
+    height: 3px;
+    background-color: transparent;
+}
+
+#screw div#last {
+    width: 56px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: #757575;
+    margin-bottom: 5px;
+    transform: rotateZ(8deg);
+}
+
+#screw div#tip {
+    width: 25px;
+    height: 8px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: #BDBDBD;
+    margin: 0 auto;
+    margin-top: 12px;
+    transform: rotateZ(0deg);
+}
+
+#marker {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#marker-top {
+    width: 200px;
+    height: 30px;
+    background-color: #424242;
+    transform: rotateZ(-15deg);
+    margin-bottom: 25px;
+    margin-left: -8px;
+    transition: .75s;
+    overflow: hidden;
+    border-style: solid;
+    border-width: thin;
+    border-color: #424242;
+}
+
+#marker:hover #marker-top {
+    transform: rotateZ(0deg);
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#marker-top div {
+    width: 20px;
+    height: 50px;
+    background-color: #EEEEEE;
+    opacity: .85;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    transform: rotateZ(-15deg);
+}
+
+#marker-joint {
+    width: 12px;
+    height: 12px;
+    background-color: #BDBDBD;
+    border-radius: 50%;
+    float: left;
+    margin-top: -8px;
+    margin-left: -4px;
+    transform: rotateZ(0deg);
+}
+
+#marker-bottom {
+    width: 200px;
+    height: 120px;
+    background-color: #424242;
+    border-style: solid;
+    border-width: thin;
+    border-color: #424242;
+    box-shadow: 0px 12px 22px 1px #BDBDBD;
+}
+
+#stripes {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #EEEEEE;
+}
+
+#stripes div {
+    width: 20px;
+    height: 40px;
+    background-color: #EEEEEE;
+    opacity: .85;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    transform: rotateZ(15deg);
+}
+
+#social .card-content {
+    text-align: center;
+}
