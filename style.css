@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    padding-bottom: 100%;
+    padding-bottom: 80%;
 }
 
 html::selection,
@@ -51,6 +51,7 @@ t {
     /*    box-shadow: 0px 2px 8px 2px #BDBDBD;*/
     
     padding: 14px;
+    padding-bottom: 28px;
 }
 
 .card-title {
@@ -354,4 +355,35 @@ t {
 
 #social .card-content {
     text-align: center;
+}
+
+.social {
+    font-family: 'FontAwesome';
+    font-size: 24pt;
+    margin: 15px;
+    text-decoration: none;
+    color: inherit;
+    opacity: .65;
+    transition: .75s;
+}
+
+.social:hover {
+    opacity: .85;
+    transform: scale(1.075);
+}
+
+#twitter:before {
+    content: "\f099";
+}
+
+#github:before {
+    content: "\f113";
+}
+
+#instagram:before {
+    content: "\f16d";
+}
+
+#email:before {
+    content: "\f0e0";
 }
