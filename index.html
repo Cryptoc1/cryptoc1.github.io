@@ -3,142 +3,141 @@
 
 <head>
     <title>Samuel Steele</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            /*            background-color: #FAFAFA;*/
+            
+            font-family: 'Open Sans', sans-serif, serif;
+            font-weight: 400;
+            font-size: 1.6em;
+            color: #363636;
+            font-smoothing: antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+        }
+        
+        a {
+            text-decoration: none;
+            color: #42A5F5;
+        }
+        
+        a:hover,
+        a:active {
+            text-decoration: underline;
+        }
+        
+        a:visted {
+            text-decoration: none;
+            color: #1976D2;
+        }
+        
+        p {
+            text-indent: 10px;
+        }
+        
+        strong {
+            color: #282828;
+            font-weight: 600;
+        }
+        
+        #layer {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background-color: #2196F3;
+            opacity: .75;
+            filter: blur(100px);
+        }
+        
+        #main-container {
+            background-color: #F5F5F5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            border-bottom-right-radius: 2px;
+        }
+        
+        #header {
+            width: 100%;
+        }
+        
+        #fullname {
+            font-size: 26pt;
+            font-weight: 600;
+            color: #42A5F5;
+        }
+        
+        #nickname {
+            font-size: 16pt;
+            font-family: 'Slabo 27px';
+        }
+        
+        #content {
+            font-size: 14pt;
+        }
+        
+        #links {
+            width: 100%;
+            text-align: center;
+            font-size: 36pt;
+            letter-spacing: .5em;
+            margin-top: 10%;
+        }
+        
+        .link {
+            display: inline-block;
+            opacity: .9;
+            transition: all .65s;
+        }
+        
+        .link:hover {
+            color: #1976D2;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="header">
-        <div id="name">Samuel Steele</div>
-    </div>
+    <div id="layer"></div>
+    <div id="main-container">
+        <div id="header">
+            <br>
+            <div id="names">
+                <div id="fullname">Samuel Steele</div>
+                <div id="nickname">cryptoc1</div>
+            </div>
+        </div>
 
-    <div class="content">
-        <div class="card">
-            <div class="card-title">Things I Enjoy</div>
-            <div class="card-content">
-                <div class="thing">
-                    <div class="thing-icon-left">
-                        <div id="computer">
-                            <div id="computer-lid" class="computer-part">
-                                <div id="computer-screen">
-                                    <div id="mini-site">
-                                        <br>
-                                        <div id="-header">Samuel Steele</div>
-                                        <div id="-card">
-                                            <br> Things I Enjoy
-                                        </div>
-                                    </div>
-                                    <!--
-                                    <div id="code-on-screen">
-    #!/usr/bin/env python
-    <br>
-    <br># So, a plain English CLI for your favourite movies and shows
-    <br>
-    <br>import requests, sys
-    <br>DEVMODE = True
-    <br>_usage = "Usage:\n\t./so.py&lt;movie title&gt;"
-    <br>def main():
-    <br>if len(sys.argv) > 1:
-    <br>
-    <t></t>do_request(sys.argv)
-    <br>else:
-    <br>
-</div>
--->
-                                </div>
-                            </div>
-                            <div id="computer-body" class="computer-part">
-                                <div id="body-lip"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thing-descr">
-                        <div class="thing-title">Computers</div>
-                        <p>Whether it's programming, or tinkering with electronics, I love computers. Most of my time is spent programming, in particular I enjoy web development and python development.</p>
-                        <p>If I'm not programming, then I'm usually reading about new technologies or techniques to expand my knowledge about computers.</p>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div class="thing">
-                    <div class="thing-icon-right">
-                        <div id="lightbulb">
-                            <div id="bulb" class="bulb"></div>
-                            <div id="stem" class="bulb"></div>
-                            <div id="screw">
-                                <div id="first"></div>
-                                <div></div>
-                                <div></div>
-                                <div id="last"></div>
-                                <div id="tip"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thing-descr">
-                        <div class="thing-title">Thinking</div>
-                        <p>I love to just spend time thinking. Mostly, I like to spend my time thinking about science and conciousness.</p>
-                        <p>Often I spend time thinking about computers and how they've changed the way humans interact.</p>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div class="thing">
-                    <div class="thing-icon-left">
-                        <div id="marker">
-                            <div id="marker-top">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div id="marker-joint"></div>
-                            <div id="marker-bottom">
-                                <div id="stripes">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <hr>
-                                <br>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thing-descr">
-                        <div class="thing-title">Movies</div>
-                        <p>In my free time, I love to watch movies. My favorite kind of movies are ones that open your mind and make you think. Movies such as <em>Interstellar</em> and <em>Ex Machina</em> are some of my favorites.
-                        </p>
-                    </div>
-                </div>
-                <br>
-                <br>
-            </div>
+        <div id="content">
+            <p>My name is Sam, obviously.</p>
+            <p>Some of my interests include programming, graphic design, and hacking. I also <strong>love</strong> science, in particular Physics.</p>
+            <p>Most of my time not spent in front of a computer is spent reading about computers, or watching movies.</p>
         </div>
-        <br>
-        <br>
-        <div class="card">
-            <div class="card-title">Where I Want to Be</div>
-            <div class="card-content">
-                <p>After completing High Schoool I hope to study Computer Science in college. I also want to get a teaching certificate for teaching High School Science & Math, so that I may help others learn.</p>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="card" id="social">
-            <div class="card-title">Where It's At?</div>
-            <div class="card-content">
-                <p>I don't have two turntables or a microphone, but you can find me on these social networks</p>
-                <a id="twitter" class="social" href="//twitter.com/cryptoc1"></a>
-                <a id="github" class="social" href="//github.com/cryptoc1"></a>
-                <a id="instagram" class="social" href="//instagram.com/cryptoc1"></a>
-                <a id="email" class="social" href="mailto:steelesam72@gmail.com?Subject=Contact%20from%20Portfolio"></a>
-            </div>
+        <div id="links">
+            <a href="//github.com/cryptoc1"><i class="fa fa-github link"></i></a>
+            <a href="//twitter.com/cryptoc1"><i class="fa fa-twitter link"></i></a>
+            <a href="mailto:steelesam72@gmail.com"><i class="fa fa-envelope-o link"></i></a>
+            <a href="//instagram.com/cryptoc1"><i class="fa fa-instagram link"></i></a>
+
         </div>
     </div>
 </body>
+<script>
+    (function init() {
+        var mc = document.getElementById('main-container')
+        var offset = window.innerHeight * .175;
+        mc.style.height = window.innerHeight - offset + "px";
+        mc.style.width = window.innerWidth - offset + "px";
+    })();
+</script>
 
 </html>
