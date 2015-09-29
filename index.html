@@ -16,10 +16,9 @@
             font-size: 1.25em;
             font-weight: 400;
             color: rgba(245, 245, 245, .98);
+            /*            color: rgba(234, 236, 246, .7);*/
             -webkit-font-smoothing: antialiased;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-            overflow-x: hidden;
-            /*            overflow: hidden;*/
         }
         
         .triangle {
@@ -61,7 +60,7 @@
             z-index: 2;
         }
         
-        .preview {
+        .content {
             position: fixed;
             top: 0;
             left: 0;
@@ -69,6 +68,10 @@
             height: 100%;
             z-index: 3;
             text-align: center;
+        }
+        
+        #preview {
+            transition: opacity .5s;
         }
         
         .title-container {
@@ -102,7 +105,6 @@
             text-align: center;
             font-size: 17pt;
             margin-top: 3.5%;
-            /*            padding: 15px;*/
         }
         
         .links {
@@ -135,7 +137,22 @@
         .links a:visited {
             text-decoration: none;
         }
-        /*        @media screen and (max-width: 750px) {}*/
+        
+        .message {
+            font-size: 34pt;
+            font-weight: 700;
+        }
+        
+        #blog {
+            color: #64B5F6;
+            transition: opacity .5s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        #soon {
+            margin-top: 22%;
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
 </head>
@@ -144,7 +161,7 @@
     <div id="top" class="triangle"></div>
     <div id="bottom" class="triangle"></div>
     <div class="overlay" id="blur-overlay"></div>
-    <div class="preview">
+    <div class="content" id="preview">
         <div class="title-container">
             <div id="name">Samuel Steele</div>
             <div id="alias">cryptoc1</div>
@@ -159,14 +176,17 @@
         </div>
     </div>
 
-    <!--  More to come! >:D  -->
-    <div id="hidden"></div>
+
+    <div class="content" id="blog">
+        <div class="message" id="soon">Blog coming soon...</div>
+    </div>
 </body>
 <script>
     var width = window.innerWidth,
         height = window.innerHeight;
 
     window.onload = function () {
+        window.addEventListener('mousewheel', onScroll, false);
         initTriangleProps();
     }
 
@@ -174,6 +194,35 @@
         width = window.innerWidth;
         height = window.innerHeight;
         initTriangleProps();
+    }
+
+    function onScroll(e) {
+        if (window.pageYOffset > (height / 1.5)) {
+            showBlog();
+        }
+        if (window.pageYOffset < (height / 2.5)) {
+            hideBlog();
+        }
+    }
+
+
+    function showBlog() {
+        var p = document.getElementById('preview');
+        p.style.opacity = 0;
+        var b = document.getElementById('blog');
+        b.style.opacity = 1;
+        p.style.visibility = "hidden";
+        b.style.visibility = "visible";
+
+    }
+
+    function hideBlog() {
+        var p = document.getElementById('preview');
+        p.style.opacity = 1;
+        var b = document.getElementById('blog');
+        b.style.opacity = 0;
+        p.style.visibility = "visible";
+        b.style.visibility = "hidden";
     }
 
     function initTriangleProps() {
@@ -187,8 +236,8 @@
 
         if (orientation == "landscape") {
             var top = document.getElementById('top');
-            top.style.borderTop = (width + (width * .25)) + "px solid #2196F3";
-            top.style.borderLeft = (width + (width * .25)) + "px solid transparent";
+            top.style.borderTop = (width + (width * .75)) + "px solid #2196F3";
+            top.style.borderLeft = (width + (width * .75)) + "px solid transparent";
             var bottom = document.getElementById('bottom');
             bottom.style.borderBottom = ((width + (width * .25)) / 6.4) + "px solid #2196F3";
             bottom.style.borderRight = ((width + (width * .25)) / 6.4) + "px solid transparent";
