@@ -34,10 +34,7 @@
             width: 0;
             height: 0;
             margin-left: -25%;
-            border-top: 2250px solid #2196F3;
-            border-left: 2250px solid transparent;
             z-index: 1;
-            box-shadow: 2px 4px 3px #BDBDBD;
         }
         
         #bottom {
@@ -46,8 +43,6 @@
             bottom: 0;
             width: 0;
             height: 0;
-            border-bottom: 350px solid #2196F3;
-            border-right: 350px solid transparent;
         }
         
         .overlay {
@@ -102,9 +97,12 @@
         }
         
         #info {
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
             font-size: 17pt;
             margin-top: 3.5%;
-            padding: 15px;
+            /*            padding: 15px;*/
         }
         
         .links {
@@ -138,7 +136,9 @@
         .links a:visited {
             text-decoration: none;
         }
+        /*        @media screen and (max-width: 750px) {}*/
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
 </head>
 
 <body>
@@ -163,6 +163,54 @@
     <!--  More to come! >:D  -->
     <div id="hidden"></div>
 </body>
+<script>
+    var width = window.innerWidth,
+        height = window.innerHeight;
 
+    window.onload = function () {
+        initTriangleProps();
+    }
+
+    window.onresize = function () {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        initTriangleProps();
+    }
+
+    function initTriangleProps() {
+        var orientation;
+        if (width > height) {
+            orientation = "landscape";
+        }
+        if (width < height) {
+            orientation = "portrait";
+        }
+
+        if (orientation == "landscape") {
+            var top = document.getElementById('top');
+            top.style.borderTop = (width + (width * .25)) + "px solid #2196F3";
+            top.style.borderLeft = (width + (width * .25)) + "px solid transparent";
+            var bottom = document.getElementById('bottom');
+            bottom.style.borderBottom = ((width + (width * .25)) / 6.4) + "px solid #2196F3";
+            bottom.style.borderRight = ((width + (width * .25)) / 6.4) + "px solid transparent";
+        }
+
+        /*if (orientation == "portrait") {
+            var top = document.getElementById('top');
+            top.style.borderTop = (height * 2) + "px solid #2196F3";
+            top.style.borderLeft = width * 1.5 + "px solid transparent";
+            var bottom = document.getElementById('bottom');
+            bottom.style.borderBottom = ((height + (height)) / 6.4) + "px solid #2196F3";
+            bottom.style.borderRight = ((height + (height)) / 6.4) + "px solid transparent";
+        }*/
+
+        /*var top = document.getElementById('top');
+        top.style.borderTop = (width + (width * .25)) + "px solid #2196F3";
+        top.style.borderLeft = (width + (width * .25)) + "px solid transparent";
+        var bottom = document.getElementById('bottom');
+        bottom.style.borderBottom = ((width + (width * .25)) / 6.4) + "px solid #2196F3";
+        bottom.style.borderRight = ((width + (width * .25)) / 6.4) + "px solid transparent";*/
+    }
+</script>
 
 </html>
