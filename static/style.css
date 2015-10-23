@@ -80,6 +80,8 @@ body {
 #right {
     background-color: rgba(68, 138, 255, .94);
     float: right;
+    overflow-y: scroll;
+    padding-bottom: 50px;
 }
 
 #right div {
