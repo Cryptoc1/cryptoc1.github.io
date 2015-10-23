@@ -1,15 +1,25 @@
 window.onload = function () {
-    fetch("//cryptoc1.herokuapp.com/api/v1/ext/posts/count").then(function (res) {
+    fetch("https://cryptoc1-blog.herokuapp.com/api/v1/ext/posts/count", {
+        mode: "cors"
+    }).then(function (res) {
         if (res.status != 200) {
-            console.log("error, status code: ", res.status);
+            var el = document.createElement('div');
+            el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
+            document.getElementById('post').appendChild(el)
+            console.error("error, status code: ", res.status);
             return;
         }
         res.text().then(function (count) {
             (function get(count, offset) {
                 var limit = 100;
-                fetch("//cryptoc1-blog.herokuapp.com/api/v1/posts?offset=" + offset + "&limit=" + limit).then(function (res) {
+                fetch("//cryptoc1-blog.herokuapp.com/api/v1/posts?offset=" + offset + "&limit=" + limit, {
+                    mode: "cors"
+                }).then(function (res) {
                     if (res.status != 200) {
-                        console.log("error, status code: ", res.status);
+                        var el = document.createElement('div');
+                        el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
+                        document.getElementById('post').appendChild(el)
+                        console.error("error, status code: ", res.status);
                         return;
                     }
                     res.text().then(function (data) {
@@ -36,11 +46,19 @@ window.onload = function () {
                             get(count, offset)
                     });
                 }).catch(function (err) {
+                    var el = document.createElement('div');
+                    el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
+                    document.getElementById('post').appendChild(el)
+                    console.error("error, status code: ", res.status);
                     console.log("error fetching: " + err);
                 });
             })(count, 0);
         });
     }).catch(function (err) {
+        var el = document.createElement('div');
+        el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
+        document.getElementById('post').appendChild(el)
+        console.error("error, status code: ", res.status);
         console.log("error fetching: " + err);
     });
 }
