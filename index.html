@@ -2,263 +2,40 @@
 <html>
 
 <head>
-    <title>Samuel Steele</title>
+    <title></title>
+    <link href="/static/favicon.png" rel="icon">
+    <link href="/static/apple-touch-icon.png" rel="apple-touch-icon">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <style>
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #EAECF6;
-            font-family: Montserrat;
-            font-size: 1.25em;
-            font-weight: 400;
-            color: rgba(245, 245, 245, .98);
-            /*            color: rgba(234, 236, 246, .7);*/
-            -webkit-font-smoothing: antialiased;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-        }
-        
-        .triangle {
-            width: 0;
-            height: 0;
-            opacity: .75;
-        }
-        
-        #top {
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            margin-left: -25%;
-            z-index: 1;
-        }
-        
-        #bottom {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .overlay {
-            position: fixed;
-            opacity: .65;
-        }
-        
-        #blur-overlay {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(225, 225, 225, .25);
-            filter: opacity(.95);
-            filter: blur(75px);
-            z-index: 2;
-        }
-        
-        .content {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 3;
-            text-align: center;
-        }
-        
-        #preview {
-            transition: opacity .5s;
-        }
-        
-        .title-container {
-            text-align: center;
-        }
-        
-        #name {
-            font-weight: 700;
-            font-size: 44pt;
-            margin-top: 9%;
-            margin-bottom: 15px;
-        }
-        
-        #alias::before {
-            content: "</";
-            font-weight: 700;
-        }
-        
-        #alias {
-            font-size: 21pt;
-        }
-        
-        #alias::after {
-            content: "  >";
-            font-weight: 700;
-        }
-        
-        #info {
-            width: 80%;
-            margin-left: 10%;
-            text-align: center;
-            font-size: 17pt;
-            margin-top: 3.5%;
-        }
-        
-        .links {
-            margin-top: 5%;
-            text-align: center;
-        }
-        
-        .links a {
-            text-decoration: none;
-            color: inherit;
-            font-size: 15pt;
-            padding: 10px;
-            border-style: solid;
-            border-width: 3px;
-            border-radius: 2px;
-            border-color: #EAECF6;
-            text-align: center;
-            min-width: 125px;
-            margin: 15px;
-            display: inline-block;
-            transition: all .6s;
-        }
-        
-        .links a:hover,
-        .links a:active {
-            text-decoration: none;
-            box-shadow: 0px 3px 6px 3px rgba(144, 202, 249, .65);
-        }
-        
-        .links a:visited {
-            text-decoration: none;
-        }
-        
-        .message {
-            font-size: 34pt;
-            font-weight: 700;
-        }
-        
-        #blog {
-            color: #64B5F6;
-            transition: opacity .5s;
-            visibility: hidden;
-            opacity: 0;
-        }
-        
-        #soon {
-            margin-top: 22%;
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
+    <link href="/static/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="rgba(68, 138, 255, .94)">
 </head>
 
 <body>
-    <div id="top" class="triangle"></div>
-    <div id="bottom" class="triangle"></div>
-    <div class="overlay" id="blur-overlay"></div>
-    <div class="content" id="preview">
-        <div class="title-container">
-            <div id="name">Samuel Steele</div>
-            <div id="alias">cryptoc1</div>
-        </div>
-        <div id="info">
+    <div class="side" id="right">
+        <div id="name">Samuel Steele</div>
+        <div id="nickname">(cryptoc1)</div>
+        <div id="descr">
             <p>I'm a 17 year old programmer who enjoys expirementing with security and networking.</p>
-            <p>In my free time I also like to dabble in data science and graphics/design.</p>
-        </div>
-        <div class="links">
-            <a id="github" href="https://github.com/cryptoc1">Fork me</a>
-            <a id="twitter" href="https://twitter.com/cryptoc1">Tweet me</a>
+            <p>I spend the majority of my time programming or watching movies.</p>
+            <p>I also enjoy graphics and design.</p>
+            <p style="margin-bottom: 1%;">Every now and then you may see that I write new posts on my blog.</p>
+            <p style="margin-bottom: 5%;"><strong><em>NOT</em></strong> a furry.</p>
+            <div class="links">
+                <a id="github" href="https://github.com/cryptoc1">Fork me</a>
+                <a id="telegram" href="https://telegram.me/cryptoc1">Telegram me</a>
+                <a id="twitter" href="https://twitter.com/cryptoc1">Tweet me</a>
+            </div>
         </div>
     </div>
-
-
-    <div class="content" id="blog">
-        <div class="message" id="soon">Blog coming soon...</div>
+    <div class="side" id="left">
+        <br>
+        <br>
+        <div id="list">
+            <div id="blog-heading">Latest Posts</div>
+        </div>
     </div>
 </body>
-<script>
-    var width = window.innerWidth,
-        height = window.innerHeight;
-
-    window.onload = function () {
-        window.addEventListener('mousewheel', onScroll, false);
-        initTriangleProps();
-    }
-
-    window.onresize = function () {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        initTriangleProps();
-    }
-
-    function onScroll(e) {
-        if (window.pageYOffset > (height / 1.5)) {
-            showBlog();
-        }
-        if (window.pageYOffset < (height / 2.5)) {
-            hideBlog();
-        }
-    }
-
-
-    function showBlog() {
-        var p = document.getElementById('preview');
-        p.style.opacity = 0;
-        var b = document.getElementById('blog');
-        b.style.opacity = 1;
-        p.style.visibility = "hidden";
-        b.style.visibility = "visible";
-
-    }
-
-    function hideBlog() {
-        var p = document.getElementById('preview');
-        p.style.opacity = 1;
-        var b = document.getElementById('blog');
-        b.style.opacity = 0;
-        p.style.visibility = "visible";
-        b.style.visibility = "hidden";
-    }
-
-    function initTriangleProps() {
-        var orientation;
-        if (width > height) {
-            orientation = "landscape";
-        }
-        if (width < height) {
-            orientation = "portrait";
-        }
-
-        if (orientation == "landscape") {
-            var top = document.getElementById('top');
-            top.style.borderTop = (width + (width * .75)) + "px solid #2196F3";
-            top.style.borderLeft = (width + (width * .75)) + "px solid transparent";
-            var bottom = document.getElementById('bottom');
-            bottom.style.borderBottom = ((width + (width * .25)) / 6.4) + "px solid #2196F3";
-            bottom.style.borderRight = ((width + (width * .25)) / 6.4) + "px solid transparent";
-        }
-
-        /*if (orientation == "portrait") {
-            var top = document.getElementById('top');
-            top.style.borderTop = (height * 2) + "px solid #2196F3";
-            top.style.borderLeft = width * 1.5 + "px solid transparent";
-            var bottom = document.getElementById('bottom');
-            bottom.style.borderBottom = ((height + (height)) / 6.4) + "px solid #2196F3";
-            bottom.style.borderRight = ((height + (height)) / 6.4) + "px solid transparent";
-        }*/
-
-        /*var top = document.getElementById('top');
-        top.style.borderTop = (width + (width * .25)) + "px solid #2196F3";
-        top.style.borderLeft = (width + (width * .25)) + "px solid transparent";
-        var bottom = document.getElementById('bottom');
-        bottom.style.borderBottom = ((width + (width * .25)) / 6.4) + "px solid #2196F3";
-        bottom.style.borderRight = ((width + (width * .25)) / 6.4) + "px solid transparent";*/
-    }
-</script>
+<script src="static/script.js"></script>
 
 </html>
