@@ -5,7 +5,7 @@ window.onload = function () {
         if (res.status != 200) {
             var el = document.createElement('div');
             el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
-            document.getElementById('post').appendChild(el)
+            document.getElementById('list').appendChild(el)
             console.error("error, status code: ", res.status);
             return;
         }
@@ -18,7 +18,7 @@ window.onload = function () {
                     if (res.status != 200) {
                         var el = document.createElement('div');
                         el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
-                        document.getElementById('post').appendChild(el)
+                        document.getElementById('list').appendChild(el)
                         console.error("error, status code: ", res.status);
                         return;
                     }
@@ -48,7 +48,7 @@ window.onload = function () {
                 }).catch(function (err) {
                     var el = document.createElement('div');
                     el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
-                    document.getElementById('post').appendChild(el)
+                    document.getElementById('list').appendChild(el)
                     console.error("error, status code: ", res.status);
                     console.log("error fetching: " + err);
                 });
@@ -57,7 +57,7 @@ window.onload = function () {
     }).catch(function (err) {
         var el = document.createElement('div');
         el.innerHTML = "Error fetching posts. HTTP Status Code: " + res.status
-        document.getElementById('post').appendChild(el)
+        document.getElementById('list').appendChild(el)
         console.error("error, status code: ", res.status);
         console.log("error fetching: " + err);
     });
