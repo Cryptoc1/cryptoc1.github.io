@@ -24,7 +24,6 @@ window.onload = function () {
                     }
                     res.text().then(function (data) {
                         data = eval('(' + data + ')');
-                        console.log(data)
                         var list = document.getElementById('list');
                         for (i in data) {
                             var d = document.createElement('div');
