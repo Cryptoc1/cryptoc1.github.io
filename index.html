@@ -2,41 +2,55 @@
 <html>
 
 <head>
-    <title></title>
-    <link href="/static/favicon.png" rel="icon">
-    <link href="/static/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href="/static/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="rgba(68, 138, 255, .94)">
+    <meta name="theme-color" content="rgba(42, 42, 42, .65)">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Open Sans', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F7F7F7;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        a {
+            text-decoration: none;
+            color: #FFC107;
+            transition: all .4s;
+        }
+        a:active,
+        a:hover {
+            text-decoration: none;
+            color: #FFA000;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+        .notice {
+            position: fixed;
+            width: 100%;
+            text-align: center;
+            bottom: 0;
+            padding: 12pt 0 14pt 0;
+            background-color: #F7F7F7;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="side" id="right">
-        <div id="name">Samuel Steele</div>
-        <div id="nickname">(cryptoc1)</div>
-        <div id="descr">
-            <p>I'm a 17 year old programmer who enjoys experiementing with security and networking.</p>
-            <p>I spend the majority of my time programming or watching movies.</p>
-            <p>I also enjoy graphics and design.</p>
-            <p style="margin-bottom: 1%;">Every now and then you may see that I write new posts on my blog.</p>
-            <p style="margin-bottom: 5%;"><strong><em>NOT</em></strong> a furry.</p>
-            <div class="links">
-                <a id="github" href="https://github.com/cryptoc1">Fork me</a>
-                <a id="telegram" href="https://telegram.me/cryptoc1">Telegram me</a>
-                <a id="twitter" href="https://twitter.com/cryptoc1">Tweet me</a>
-            </div>
-            <br>
-        </div>
-    </div>
-    <div class="side" id="left">
-        <br>
-        <br>
-        <div id="list">
-            <div id="blog-heading">Latest Posts</div>
-        </div>
-    </div>
+    <iframe src="https://3bytes.xyz" width="100%" height="100%"></iframe>
+    <div class="notice">It looks like you're viewing this blog through my Github page. Why not try the <a href="https://3btyes.xyz">full</a> website?</div>
 </body>
-<script src="static/script.js"></script>
 
 </html>
